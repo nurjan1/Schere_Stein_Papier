@@ -8,7 +8,7 @@ public class Main {
         System.out.println("Willst du Schere Stein Papier spielen");
         String jaNein = scanner.nextLine();
         if (Objects.equals(jaNein, "ja") || Objects.equals(jaNein, "Ja")){
-            System.out.println("Supper!");
+            System.out.println("Super!");
 
 
         }
