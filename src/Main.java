@@ -52,7 +52,6 @@ public class Main {
             }
 
 
-
         }
         else {
             System.out.println("Schade *traurige Computer geräusche*");
