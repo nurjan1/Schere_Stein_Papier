@@ -12,6 +12,7 @@ public class Main {
         int spieler_wahl = 0;
         String spieler_wahl_wort;
         String jaNein;
+
         System.out.println("Willst du ein Spiel mit mir spielen?");
         jaNein = scanner.nextLine();
         if (Objects.equals(jaNein, "ja") || Objects.equals(jaNein, "Ja") || Objects.equals(jaNein, "JA")){
@@ -22,7 +23,6 @@ public class Main {
             System.out.println("Soll ich dir die Regeln des Spiels erklären?");
             jaNein = scanner.nextLine();
             if (Objects.equals(jaNein, "ja") || Objects.equals(jaNein, "Ja")|| Objects.equals(jaNein, "JA")){
-
                 System.out.println("Es gelten folgende Regeln:   ");
                 System.out.println("1.Papier gewinnt gegen Stein (Papier wickelt ihn ein).");
                 System.out.println("2.Schere gewinnt gegen das Papier (Schere zerschneidet Papier).");
