@@ -11,37 +11,35 @@ public class Main {
         int computer_score = 0;
         int spieler_wahl = 0;
         String spieler_wahl_wort;
-        String jaNein = null;
-
+        String jaNein;
         System.out.println("Willst du ein Spiel mit mir spielen?");
         jaNein = scanner.nextLine();
         if (Objects.equals(jaNein, "ja") || Objects.equals(jaNein, "Ja") || Objects.equals(jaNein, "JA")){
-            jaNein = null ;
             System.out.println("Super!");
             System.out.println("Wir spielen Schere-Stein-Papier.");
             System.out.println("Wer zuerst 3 Punkte bekommt, hat gewonnen.");
+            //regeln
             System.out.println("Soll ich dir die Regeln des Spiels erklären?");
-
             jaNein = scanner.nextLine();
             if (Objects.equals(jaNein, "ja") || Objects.equals(jaNein, "Ja")|| Objects.equals(jaNein, "JA")){
 
-                System.out.println("Es gilten folgende Regeln:   ");
+                System.out.println("Es gelten folgende Regeln:   ");
                 System.out.println("1.Papier gewinnt gegen Stein (Papier wickelt ihn ein).");
                 System.out.println("2.Schere gewinnt gegen das Papier (Schere zerschneidet Papier).");
                 System.out.println("3.Stein gewinnt gegen die Schere (Schere wird stumpf).");
                 System.out.println("Alle Regeln verstanden?");
                 jaNein = scanner.nextLine();
                 if (Objects.equals(jaNein, "ja") || Objects.equals(jaNein, "Ja")|| Objects.equals(jaNein, "JA")) {
+                    System.out.println("Supper dann lass uns jetzt spielen!");
                 }
                 else  {
                     System.out.println("EGAL,WIR SPIELEN JETZT!");
                 }
                 System.out.println("Okay, dann lass uns Spielen.");
-            }
-            else {
+            } else {
                 System.out.println("Okay, dann lass uns Spielen.");
             }
-
+            //spiel selber
             while (spieler_score <3 || computer_score < 3) {
                 System.out.println("Schere,Stein oder Papier?");
                 spieler_wahl_wort = scanner.nextLine();
@@ -83,7 +81,7 @@ public class Main {
                 } else if (computer_wahl == 2 && spieler_wahl == 3) {
                     System.out.println("Ok die runde geht an dich.");
                     spieler_score = spieler_score + 1;
-                    //papier > stein punkt compuret
+                    //papier < schere punkt computer
                 } else if (computer_wahl == 3 && spieler_wahl == 2) {
                     System.out.println("Ok die runde geht an mich.");
                     computer_score = computer_score + 1;
@@ -92,6 +90,7 @@ public class Main {
                     System.out.println("Ok die runde geht an mich.");
                     spieler_score = spieler_score + 1;
                 }
+                //punkte System
                 System.out.println("Du hast " + spieler_score + " punkte.");
                 System.out.println("Ich habe " + computer_score + " punkte.");
                 if (spieler_score == 3){
@@ -103,7 +102,7 @@ public class Main {
                     System.exit(0);
                 }
             }
-        }else {
+        }else{
             System.out.println("Schade *traurige Computer geräusche*");
         }
     }
