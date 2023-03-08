@@ -33,11 +33,10 @@ public class Main {
                 jaNein = scanner.nextLine();
                 if (Objects.equals(jaNein, "ja") || Objects.equals(jaNein, "Ja")|| Objects.equals(jaNein, "JA")) {
                 }
-                else  { System.out.println("EGAL,WIR SPIELEN JETZT!");
-
+                else  {
+                    System.out.println("EGAL,WIR SPIELEN JETZT!");
                 }
                 System.out.println("Okay, dann lass uns Spielen.");
-
             }
             else {
                 System.out.println("Okay, dann lass uns Spielen.");
@@ -48,7 +47,6 @@ public class Main {
                 spieler_wahl_wort = scanner.nextLine();
                 computer_wahl = zufallszahlenGenerator.nextInt(3);
                 computer_wahl = computer_wahl + 1;
-
                 if (computer_wahl == 1) {
                     System.out.println("Schere");
                 }
@@ -104,12 +102,9 @@ public class Main {
                     System.out.println("Ok ich gewine!");
                     System.exit(0);
                 }
-
             }
         }else {
             System.out.println("Schade *traurige Computer geräusche*");
         }
-
-
     }
 }
