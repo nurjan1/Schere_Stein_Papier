@@ -9,20 +9,43 @@ public class Main {
         int computer_wahl;
         int spieler_score = 0;
         int computer_score = 0;
-        int spieler_wahl;
+        int spieler_wahl = 0;
+        String spieler_wahl_wort;
         String jaNein = null;
 
-        System.out.println("Willst du Schere Stein Papier spielen");
+        System.out.println("Willst du ein Spiel mit mir spielen?");
         jaNein = scanner.nextLine();
-        if (Objects.equals(jaNein, "ja") || Objects.equals(jaNein, "Ja") || Objects.equals(jaNein, "JA")) {
-            System.out.println("Supper!");
-            System.out.println("Wir spielen mit Schere,stein und Papier.");
+        if (Objects.equals(jaNein, "ja") || Objects.equals(jaNein, "Ja") || Objects.equals(jaNein, "JA")){
+            jaNein = null ;
+            System.out.println("Super!");
+            System.out.println("Wir spielen Schere-Stein-Papier.");
+            System.out.println("Wer zuerst 3 Punkte bekommt, hat gewonnen.");
+            System.out.println("Soll ich dir die Regeln des Spiels erklären?");
+
+            jaNein = scanner.nextLine();
+            if (Objects.equals(jaNein, "ja") || Objects.equals(jaNein, "Ja")|| Objects.equals(jaNein, "JA")){
+
+                System.out.println("Es gilten folgende Regeln:   ");
+                System.out.println("1.Papier gewinnt gegen Stein (Papier wickelt ihn ein).");
+                System.out.println("2.Schere gewinnt gegen das Papier (Schere zerschneidet Papier).");
+                System.out.println("3.Stein gewinnt gegen die Schere (Schere wird stumpf).");
+                System.out.println("Alle Regeln verstanden?");
+                jaNein = scanner.nextLine();
+                if (Objects.equals(jaNein, "ja") || Objects.equals(jaNein, "Ja")|| Objects.equals(jaNein, "JA")) {
+                }
+                else  { System.out.println("EGAL,WIR SPIELEN JETZT!");
+
+                }
+                System.out.println("Okay, dann lass uns Spielen.");
+
+            }
+            else {
+                System.out.println("Okay, dann lass uns Spielen.");
+            }
 
             while (spieler_score <3 || computer_score < 3) {
-                System.out.println("1.Schere");
-                System.out.println("2.Stein");
-                System.out.println("3.Papier");
-                spieler_wahl = Integer.parseInt(scanner.nextLine());
+                System.out.println("Schere,Stein oder Papier?");
+                spieler_wahl_wort = scanner.nextLine();
                 computer_wahl = zufallszahlenGenerator.nextInt(3);
                 computer_wahl = computer_wahl + 1;
 
@@ -34,6 +57,15 @@ public class Main {
                 }
                 if (computer_wahl == 3) {
                     System.out.println("Papier");
+                }
+                if (Objects.equals(spieler_wahl_wort, "Schere") ||Objects.equals(spieler_wahl_wort, "schere")||Objects.equals(spieler_wahl_wort, "SCHERE")){
+                    spieler_wahl = 1;
+                }
+                if (Objects.equals(spieler_wahl_wort, "Stein") ||Objects.equals(spieler_wahl_wort, "stein")||Objects.equals(spieler_wahl_wort, "STEIN")){
+                    spieler_wahl = 2;
+                }
+                if (Objects.equals(spieler_wahl_wort, "Papier") ||Objects.equals(spieler_wahl_wort, "papier")||Objects.equals(spieler_wahl_wort, "PAPIER")){
+                    spieler_wahl = 3;
                 }
                 if (computer_wahl == spieler_wahl) {
                     System.out.println("unentschieden noch mal.");
@@ -75,7 +107,7 @@ public class Main {
 
             }
         }else {
-            System.out.println("Schade");
+            System.out.println("Schade *traurige Computer geräusche*");
         }
 
 
