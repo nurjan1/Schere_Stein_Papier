@@ -1,12 +1,13 @@
 import java.util.Objects;
-import java.util.Scanner;
 import java.util.Random;
-public class Main {
+import java.util.Scanner;
+
+public class Test {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random zufallszahlenGenerator = new Random();
 
-        int computer_wahl;
+        int computer_wahl = 0;
         int spieler_score = 0;
         int computer_score = 0;
         int spieler_wahl = 0;
@@ -40,20 +41,11 @@ public class Main {
                 System.out.println("Okay, dann lass uns Spielen.");
             }
             //spiel selber
-            while (spieler_score <3 || computer_score < 3) {
+            while (spieler_score < 3 || computer_score < 3) {
                 System.out.println("Schere,Stein oder Papier?");
                 spieler_wahl_wort = scanner.nextLine();
-                computer_wahl = zufallszahlenGenerator.nextInt(3);
-                computer_wahl = computer_wahl + 1;
-                if (computer_wahl == 1) {
-                    System.out.println("Schere");
-                }
-                if (computer_wahl == 2) {
-                    System.out.println("Stein");
-                }
-                if (computer_wahl == 3) {
-                    System.out.println("Papier");
-                }
+
+
                 if (Objects.equals(spieler_wahl_wort, "Schere") ||Objects.equals(spieler_wahl_wort, "schere")||Objects.equals(spieler_wahl_wort, "SCHERE")){
                     spieler_wahl = 1;
                 }
@@ -62,6 +54,18 @@ public class Main {
                 }
                 if (Objects.equals(spieler_wahl_wort, "Papier") ||Objects.equals(spieler_wahl_wort, "papier")||Objects.equals(spieler_wahl_wort, "PAPIER")){
                     spieler_wahl = 3;
+                }
+                if (spieler_wahl == 1) {
+                    System.out.println("Stein");
+                    computer_wahl = 2;
+                }
+                if (spieler_wahl == 2) {
+                    System.out.println("Papier");
+                    computer_wahl = 3;
+                }
+                if (spieler_wahl == 3) {
+                    System.out.println("Schere");
+                    computer_wahl = 1;
                 }
                 if (computer_wahl == spieler_wahl) {
                     System.out.println("unentschieden noch mal.");
